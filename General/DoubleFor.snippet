@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>wcf safe close</Title>
+      <Author>Chris Kugler</Author>
+      <Description>double for loop</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>doublefor</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>outerlength</ID>
+          <ToolTip>outerlength</ToolTip>
+          <Default>outerlength</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>innerlength</ID>
+          <ToolTip>innerlength</ToolTip>
+          <Default>innerlength</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[for(int i = 0; i < $outerlength$; i++)
+{
+    for(int j = 0; j < $innerlength$; j++)
+    {
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Chris Kugler</Author>
+      <Description>Simple IOC Container</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>IOCCreate</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[public class IOCContainer : IDisposable
+    {
+        #region Singleton
+        private static readonly Lazy<IOCContainer> instance = new Lazy<IOCContainer>(() => new IOCContainer());
+
+        public static IOCContainer Instance { get { return instance.Value; } }       
+        #endregion
+        
+        private Dictionary<Type, object> items;
+
+        private IOCContainer()
+        {
+            items = new Dictionary<Type, object>();
+        }
+
+        public void AddItem<T>(T instance)
+        {
+            // allow exception to throw if trying to re-register the same type.         
+            this.items.Add(typeof(T), instance);
+        }
+
+        public T GetItem<T>()
+        {
+            if (this.items.ContainsKey(typeof(T)))
+                return (T)this.items[typeof(T)];
+            else return default(T);
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+                if (this.items.Count > 0)
+                {
+                    this.items.OfType<IDisposable>()
+                        .ToList()
+                        .ForEach(x =>
+                            {
+                                try
+                                {
+                                    x.Dispose();
+                                }
+                                catch (Exception) { }
+                            });
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
+    }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

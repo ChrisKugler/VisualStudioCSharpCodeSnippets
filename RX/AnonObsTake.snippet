@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>argument exception</Title>
+      <Author>Chris Kugler</Author>
+      <Description>Observable Take1 from EventPattern</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>anonobstake</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>target</ID>
+          <ToolTip>target</ToolTip>
+          <Default>target</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>event</ID>
+          <ToolTip>event</ToolTip>
+          <Default>event</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>method</ID>
+          <ToolTip>method</ToolTip>
+          <Default>method</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[   Observable.FromEventPattern($target$, "$event$").Take(1).Subscribe(x => { }, ex => log.Error(ex));                        ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

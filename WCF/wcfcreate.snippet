@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>wcf safe close</Title>
+      <Author>Chris Kugler</Author>
+      <Description>create wcf client</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>wcfcreate</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>type</ToolTip>
+          <Default>type</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[$type$ client = null; 
+try
+{
+    client = new $type$(); 
+    // TODO: service call here    
+}
+catch (Exception ex)
+{
+    log.Error(ex);
+}
+finally
+{
+    try{ if(client != null) client.Close(); } catch(Exception) { client.Abort(); }
+}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

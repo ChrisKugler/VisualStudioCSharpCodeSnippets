@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>region</Title>
+      <Author>Chris Kugler</Author>
+      <Description>throw fault exception</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>wcffault</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>exception</ID>
+          <ToolTip>exception</ToolTip>
+          <Default>exception</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>message</ID>
+          <ToolTip>message</ToolTip>
+          <Default>message</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>reason</ID>
+          <ToolTip>reason</ToolTip>
+          <Default>reason</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[throw new FaultException<$exception$>(new $exception$("$message$"), "$reason$");]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

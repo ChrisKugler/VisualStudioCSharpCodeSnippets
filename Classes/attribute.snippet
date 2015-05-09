@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>attribute</Title>
+      <Author>Chris Kugler</Author>
+      <Description>Attribute class without the sample crap.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>attr</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+          <ToolTip>The name of the attribute</ToolTip>
+          <Default>My</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>target</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>All</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>inherited</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>false</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>allowmultiple</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>true</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>SystemAttribute</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>SimpleTypeName(global::System.Attribute)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>SystemAttributeUsage</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>SimpleTypeName(global::System.AttributeUsage)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>SystemAttributeTargets</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>SimpleTypeName(global::System.AttributeTargets)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>Exception</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>SimpleTypeName(global::System.NotImplementedException)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[$SystemAttributeUsage$($SystemAttributeTargets$.$target$, Inherited = $inherited$, AllowMultiple = $allowmultiple$)]
+sealed class $name$Attribute : $SystemAttribute$
+{    
+   public $name$Attribute () 
+   {         
+   }       
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

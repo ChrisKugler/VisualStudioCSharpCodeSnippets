@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>propnotify</Title>
+      <Author>Chris Kugler</Author>
+      <Description>lazy singleton</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>lazysingleton</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>type</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>ClassName()</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="type decl"><![CDATA[#region Singleton
+private static readonly Lazy<$type$> instance = new Lazy<$type$>(() => new $type$());         
+
+        public static $type$ Instance { get { return instance.Value; } }             
+
+        private $type$()
+        {} 
+#endregion]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>BG</Title>
+      <Author>Chris Kugler</Author>
+      <Description>WPF Routed Event</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>routedEvent</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+          <ToolTip>name</ToolTip>
+          <Default>name</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>owner</ID>
+          <ToolTip>owner</ToolTip>
+          <Default>owner</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[ public static readonly RoutedEvent $name$Event = EventManager.RegisterRoutedEvent(
+            "$name$", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof($owner$));
+
+        
+        public event RoutedEventHandler $name$
+        {
+            add { AddHandler($name$Event, value); }
+            remove { RemoveHandler($name$Event, value); }
+        }     ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

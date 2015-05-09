@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>propnotify</Title>
+      <Author>Chris Kugler</Author>
+      <Description>full singleton</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>singleton</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>type</ID>
+          <ToolTip>
+          </ToolTip>
+          <Default>
+          </Default>
+          <Function>ClassName()</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Kind="type decl"><![CDATA[#region Singleton
+private static $type$ instance;
+        private static volatile object createLock = new object();
+
+        public static $type$ Instance
+        {
+	        get 
+            { 
+                if (instance == null)
+                    lock (createLock)
+                        if (instance == null)
+                            instance = new $type$();
+                return instance;
+            }			
+        }
+
+        private $type$()
+        {} 
+#endregion]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
