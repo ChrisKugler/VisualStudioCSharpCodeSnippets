@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Debug.Log</Title>
+      <Author>Chris Kugler</Author>
+      <Description>Code snippet new coroutine</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>coroutine</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Name</ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[private IEnumerator $Name$()
+{
+    yield return null; 
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
